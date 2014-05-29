@@ -10,6 +10,7 @@ const
 morgan( 'dev' ); // Use express logger in 'dev' mode.
 
 app.use( express.static( __dirname + '/static' ));
+app.use( express.static( __dirname + '/bower_components' ));
 app.use( serveFavicon( __dirname + '/static/favicon.ico' ));
 app.use( morgan( 'dev' ));
 
