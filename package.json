@@ -1,10 +1,20 @@
 {
-	"name": "travlster",
-	"version": "0.0.1",
-	"description": "Travlster from scratch. Begun on 28/5/2014.",
-	"keywords": ["travel", "commute", "buses", "trains"],
-	"author": "Aniket Suryavanshi <aniket.a.s@gmail.com>",
-	"script": {
-	"start": "node --harmony server.js"
-	}
+  "name": "travlster",
+  "version": "0.0.1",
+  "description": "Travlster from scratch. Begun on 28/5/2014.",
+  "keywords": [
+    "travel",
+    "commute",
+    "buses",
+    "trains"
+  ],
+  "author": "Aniket Suryavanshi <aniket.a.s@gmail.com>",
+  "script": {
+    "start": "node --harmony server.js"
+  },
+  "dependencies": {
+    "express": "^4.3.1",
+    "request": "^2.36.0",
+    "zmq": "^2.7.0"
+  }
 }
