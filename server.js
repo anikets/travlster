@@ -1,8 +1,16 @@
 const
-    http = require( 'http' );
+    http = require( 'http' ),
+    express = require( 'express' ),
+    app = express(),
+    morgan = require( 'morgan' );
 
-http.createServer( function( req, res ) {
-	console.log( 'Travlster server started...' );
-	res.writeHead( 200 );
-	res.end( "Hello from Travlster server!\n" );
-}).listen( 8888 );
+morgan( 'dev' ); // Use express logger in 'dev' mode.
+
+app.get( '/', function( req, res ) {
+ 	console.info( 'Serving request for ', req.method, req.url);
+  res.send( 200, 'Hello from Travlster!' );
+});
+
+app.listen( 8888, function() {
+  console.info( 'Travlster server started...' );
+});
