@@ -9,13 +9,18 @@
     "trains"
   ],
   "author": "Aniket Suryavanshi <aniket.a.s@gmail.com>",
-  "script": {
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:anikets/travlster.git"
+  },
+  "scripts": {
     "start": "node --harmony server.js"
   },
   "dependencies": {
     "express": "^4.3.1",
     "morgan": "^1.1.1",
     "request": "^2.36.0",
+    "serve-favicon": "^2.0.0",
     "zmq": "^2.7.0"
   }
 }
