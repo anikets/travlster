@@ -14,7 +14,7 @@
     "url": "git@bitbucket.org:anikets/travlster.git"
   },
   "scripts": {
-    "start": "node --harmony server.js"
+    "start": "nodemon --harmony server.js"
   },
   "dependencies": {
     "express": "^4.3.1",
