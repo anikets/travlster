@@ -17,8 +17,15 @@
     "start": "nodemon --harmony server.js"
   },
   "dependencies": {
+    "connect-redis": "^2.0.0",
+    "cookie-parser": "^1.1.0",
     "express": "^4.3.1",
+    "express-session": "^1.2.1",
     "morgan": "^1.1.1",
+    "npmlog": "0.0.6",
+    "passport": "^0.2.0",
+    "passport-google": "^0.3.0",
+    "redis": "^0.10.3",
     "request": "^2.36.0",
     "serve-favicon": "^2.0.0",
     "zmq": "^2.7.0"
