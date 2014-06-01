@@ -14,6 +14,8 @@ app.use( express.static( __dirname + '/bower_components' ));
 app.use( serveFavicon( __dirname + '/static/favicon.ico' ));
 app.use( morgan( 'dev' ));
 
+app.set('views', __dirname);
+
 app.get( '/', function( req, res ) {
  	console.info( 'Serving request for ', req.method, req.url);
   res.send( 200, 'Hello from Travlster!' );
