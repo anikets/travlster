@@ -26,6 +26,7 @@
     "express": "^4.3.1",
     "express-session": "^1.2.1",
     "morgan": "^1.1.1",
+    "nodemon": "^1.2.0",
     "npmlog": "0.0.6",
     "passport": "^0.2.0",
     "passport-google": "^0.3.0",
