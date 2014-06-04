@@ -1,0 +1,1 @@
+web: nodemon --harmony server.js
