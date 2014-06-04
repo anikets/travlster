@@ -28,7 +28,6 @@
     "passport-google": "^0.3.0",
     "redis": "^0.10.3",
     "request": "^2.36.0",
-    "serve-favicon": "^2.0.0",
-    "zmq": "^2.7.0"
+    "serve-favicon": "^2.0.0"
   }
 }
