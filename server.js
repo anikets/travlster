@@ -53,6 +53,21 @@ function( identifier, profile, done ) {
   return done(null, profile);
 }));
 
+const authed = function(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  } else if (redisClient.ready) {
+    res.json(403, {
+      error: "forbidden",
+      reason: "not_authenticated"
+    });
+  } else {
+    res.json(503, {
+      error: "service_unavailable", reason: "authentication_unavailable"
+    });
+  }
+};
+
 app.get('/auth/google/:return?', passport.authenticate('google', { successRedirect: '/authed' }));
 app.get('/auth/logout', function( req, res ){
   req.logout();
@@ -66,7 +81,7 @@ app.get( '/', function( req, res ) {
   log.info( 'Serving request for ', req.method, req.url);
   res.send( 200, 'Hello from Travlster!' );
 });
-app.get( '/authed', function( req, res ) {
+app.get( '/authed', authed, function( req, res ) {
   fs.readFile( './static/authed.html', function( err, data ) {
     if ( err ) log.error( err )
     else {
