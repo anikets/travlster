@@ -13,7 +13,10 @@
     "type": "git",
     "url": "git@bitbucket.org:anikets/travlster.git"
   },
-  "engines": "0.10.28",
+  "engines": {
+    "node": "0.10.28",
+    "npm": "1.4.7"
+  }
   "scripts": {
     "start": "nodemon --harmony server.js"
   },
