@@ -91,5 +91,5 @@ app.get( '/authed', authed, function( req, res ) {
 });
 
 app.listen( 8888, function() {
-  log.info( 'Travlster server started...' );
+  log.info( 'Travlster server listening on 8888...' );
 });
