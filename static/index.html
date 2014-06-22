@@ -10,15 +10,36 @@
     <link rel="stylesheet" href="app.css">
   </head>
   <body>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Travlster</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="container-fluid">
       <h1>Travlster</h1>
       <a class="btn btn-primary btn-lg" id="login" href="/auth/google" data-toggle="tooltip" title="Using your existing accounts">Sign up / Log in with your Google account</a>
-      <ul class="nav nav-pills">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
     </div>
+
+    <script type="text/x-handlebars">
+      <h1>About</h1>
+    </script>
+
+    <script type="text/x-handlebars">
+      <h1>Contact Us</h1>
+    </script>
 
     <!--<script src="jquery/dist/jquery.min.js"></script>
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>
