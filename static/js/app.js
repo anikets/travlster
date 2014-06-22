@@ -5,10 +5,12 @@ requirejs.config({
     bootstrap: '/bootstrap/dist/js/bootstrap.min',
     typeahead: '/typeahead.js/dist/typeahead.jquery.min',
     handlebars: '/handlebars/handlebars',
+    ember: '/ember/ember',
     app: 'app'
   },
   shim: {
-    'travlster': [ 'jquery' ]
+    'ember': [ 'jquery', 'handlebars' ],
+    'travlster': [ 'ember' ]
   }
 });
 require(['travlster'], function(Travlster) {
