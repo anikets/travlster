@@ -14,6 +14,7 @@ define( function() {
       this.resource( 'dashboard' );
       this.resource( 'buses' );
       this.resource( 'trains' );
+      this.resource( 'log' );
     });
   }
   return Travlster;
