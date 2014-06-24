@@ -68,10 +68,10 @@ const authed = function(req, res, next) {
   }
 };
 
-app.get('/auth/google/:return?', passport.authenticate('google', { successRedirect: '/authed' }));
+app.get('/auth/google/:return?', passport.authenticate('google', { successRedirect: '/authed#/dashboard' }));
 app.get('/auth/logout', function( req, res ){
   req.logout();
-  res.redirect('/');
+  res.redirect('/#/home');
 });
 
 app.get( '/api/:name', function( req, res ) {
