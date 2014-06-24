@@ -54,6 +54,48 @@
 
     <script type="text/x-handlebars" id="log">
       <h1>Log your Journey</h1>
+      <form role="form">
+        <legend>Select your journey type:</legend>
+        <fieldset>
+          <div class="radio">
+            <label for="jt-walk">
+              <input type="radio" name="journey-type" value="walk" id="jt-walk" />
+              Walk
+            </label>
+          </div>
+          <div class="radio">
+            <label for="jt-bicycle">
+              <input type="radio" name="journey-type" value="bicycle" id="jt-bicycle" />
+              Bicycle
+            </label>
+          </div>
+          <div class="radio">
+            <label for="jt-motorcycle">
+              <input type="radio" name="journey-type" value="motorcycle" id="jt-motorcycle" />
+              Motorcycle
+            </label>
+          </div>
+          <div class="radio">
+            <label for="jt-car">
+              <input type="radio" name="journey-type" value="car" id="jt-car" />
+              Car
+            </label>
+          </div>
+          <div class="radio">
+            <label for="jt-bus">
+              <input type="radio" name="journey-type" value="bus" id="jt-bus" />
+              Bus
+            </label>
+          </div>
+          <div class="radio">
+            <label for="jt-train">
+              <input type="radio" name="journey-type" value="train" id="jt-train" />
+              Train
+            </label>
+          </div>
+          <input type="submit" value="Start">
+        </fieldset>
+      </form>
     </script>
 
     <script data-main="js/app" src="requirejs/require.js"></script>
