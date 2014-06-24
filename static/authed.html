@@ -10,10 +10,46 @@
     <link rel="stylesheet" href="app.css">
   </head>
   <body>
-    <div class="container-fluid">
-      <h1>Travlster</h1>
-      <a class="btn btn-danger" id="register" href="/auth/logout">Logout</a>
-    </div>
+    <script type="text/x-handlebars">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            {{#link-to 'dashboard' class="navbar-brand"}}Travlster{{/link-to}}
+          </div>
+          <ul class="nav navbar-nav">
+            <li>{{#link-to 'buses'}}Buses{{/link-to}}</li>
+            <li>{{#link-to 'trains'}}Trains{{/link-to}}</li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a id="register" href="/auth/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        {{outlet}}
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" id="dashboard">
+      <h1>Dashboard</h1>
+    </script>
+
+    <script type="text/x-handlebars" id="buses">
+      <h1>Buses</h1>
+    </script>
+
+    <script type="text/x-handlebars" id="trains">
+      <h1>Trains</h1>
+    </script>
 
     <script data-main="js/app" src="requirejs/require.js"></script>
   </body>

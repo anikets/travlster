@@ -11,6 +11,9 @@ define( function() {
       this.resource( 'home' );
       this.resource( 'about' );
       this.resource( 'contact-us' );
+      this.resource( 'dashboard' );
+      this.resource( 'buses' );
+      this.resource( 'trains' );
     });
   }
   return Travlster;
