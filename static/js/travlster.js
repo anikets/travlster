@@ -14,13 +14,47 @@ define( function() {
       this.resource( 'dashboard' );
       this.resource( 'buses' );
       this.resource( 'trains' );
-      this.resource( 'log' );
+      this.resource( 'logs', function() {
+        this.resource( 'log', { path: ':log_id' });
+      });
+    });
+    EmberApp.LogsRoute = Ember.Route.extend({
+      model: function() {
+        return TravlsterModel.pastLogs;
+      }
+    });
+
+    EmberApp.BusesRoute = Ember.Route.extend({
+      model: function() {
+        return TravlsterModel.busStops;
+      }
     });
   }
   return Travlster;
 });
 
+
+
+
+/* Fixtures */
 var TravlsterModel = {};
+
+TravlsterModel.pastLogs = [
+  {
+    "id": "1",
+    "startDateTime": "1403638302644",
+    "endDateTime": "1403638303644",
+    "waypoints": ["1","2","3"],
+    "type": "car"
+  },
+  {
+    "id": "2",
+    "startDateTime": "1403638312644",
+    "endDateTime": "1403638314644",
+    "waypoints": ["1,1","2,2","3,3"], 
+    "type": "walk"
+  }
+];
 
 TravlsterModel.busStops = [
   {
