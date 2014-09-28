@@ -89,6 +89,9 @@ app.get( '/authed', authed, function( req, res ) {
     }
   });
 });
+app.post( '/interview-test', function( req, res ) {
+  res.send( 'All good!' );
+});
 
 app.listen( 8888, function() {
   log.info( 'Travlster server listening on 8888...' );
