@@ -8,8 +8,8 @@ const
   session = require( 'express-session' ),
   passport = require( 'passport' ),
   app = express(),
-  redisClient = require( 'redis' ).createClient(),
-  RedisStore = require( 'connect-redis' )( session ),
+  //redisClient = require( 'redis' ).createClient(),
+  //RedisStore = require( 'connect-redis' )( session ),
   GoogleStrategy = require( 'passport-google' ).Strategy,
   morgan = require( 'morgan' ),
   log = require( 'npmlog' ),
@@ -20,10 +20,10 @@ const
 morgan( 'dev' ); // Use express logger in 'dev' mode.
 
 app.use( cookieParser());
-app.use( session({
-  store: new RedisStore({ client: redisClient }),
-  secret: 'Travlster super secret'
-}));
+// app.use( session({
+//   store: new RedisStore({ client: redisClient }),
+//   secret: 'Travlster super secret'
+// }));
 app.use( express.static( __dirname + '/static' ));
 app.use( express.static( __dirname + '/bower_components' ));
 app.use( passport.initialize());
@@ -33,9 +33,9 @@ app.use( morgan( 'dev' ));
 
 app.set('views', __dirname);
 
-redisClient
-  .on( 'ready', function() { log.info( 'Redis', 'ready' );})
-  .on( 'error', function( err ) { log.error( 'Redis', err.message );});
+// redisClient
+//   .on( 'ready', function() { log.info( 'Redis', 'ready' );})
+//   .on( 'error', function( err ) { log.error( 'Redis', err.message );});
 
 passport.serializeUser( function( user, done ) {
   done( null, user.identifier);
@@ -88,6 +88,9 @@ app.get( '/authed', authed, function( req, res ) {
       res.send( 200, data.toString());
     }
   });
+});
+app.post( '/interview-test', function( req, res ) {
+  res.send( 'All good!' );
 });
 
 app.listen( 8888, function() {
